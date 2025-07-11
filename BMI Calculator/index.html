@@ -1,68 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>BMI Calculator</title>
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-      background: #e0e0e0;
-      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #dbe6f6, #c5796d);
       display: flex;
       justify-content: center;
       align-items: center;
       height: 100vh;
-      margin: 0;
     }
 
     .container {
       background: #e0e0e0;
-      padding: 25px;
-      border-radius: 15px;
-      box-shadow: 4px 4px 8px #c0c0c0, -4px -4px 8px #ffffff;
-      width: 300px;
+      padding: 35px 30px;
+      border-radius: 20px;
+      box-shadow: 10px 10px 25px #bebebe, -10px -10px 25px #ffffff;
+      width: 320px;
       text-align: center;
     }
 
     h2 {
-      margin-bottom: 20px;
+      margin-bottom: 25px;
+      color: #333;
+      text-shadow: 1px 1px 2px #ccc;
     }
 
     input[type="number"] {
       width: 100%;
-      padding: 10px;
-      margin: 10px 0;
+      padding: 12px;
+      margin: 12px 0;
       border: none;
-      border-radius: 10px;
-      box-shadow: inset 2px 2px 4px #c0c0c0, inset -2px -2px 4px #ffffff;
-      background: #e0e0e0;
+      border-radius: 12px;
       font-size: 1em;
+      background: #e0e0e0;
+      box-shadow: inset 3px 3px 6px #bebebe, inset -3px -3px 6px #ffffff;
     }
 
     button {
       width: 100%;
-      padding: 10px;
-      margin-top: 10px;
+      padding: 12px;
+      margin-top: 15px;
       border: none;
-      border-radius: 10px;
-      background: #90ee90;
-      box-shadow: 2px 2px 4px #c0c0c0, -2px -2px 4px #ffffff;
+      border-radius: 12px;
+      background: #8fd694;
       font-weight: bold;
       font-size: 1em;
       cursor: pointer;
+      box-shadow: 3px 3px 6px #bebebe, -3px -3px 6px #ffffff;
+      transition: all 0.3s ease;
+    }
+
+    button:hover {
+      background: #76c67b;
+      color: white;
     }
 
     #bmiResult, #condition {
-      margin-top: 15px;
-      font-size: 1em;
+      margin-top: 20px;
+      font-size: 1.05em;
+      color: #444;
+      font-weight: bold;
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <h2>Body Mass Index (BMI) Calculator</h2>
-    <input id="height" type="number" placeholder="Your Height (cm)">
-    <input id="weight" type="number" placeholder="Your Weight (kg)">
+    <h2>BMI Calculator</h2>
+    <input id="height" type="number" placeholder="Height (cm)" />
+    <input id="weight" type="number" placeholder="Weight (kg)" />
     <button onclick="computeBMI()">Compute BMI</button>
     <div id="bmiResult"></div>
     <div id="condition"></div>
